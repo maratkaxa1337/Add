@@ -1,0 +1,57 @@
+CREATE DATABASE [dbbar]
+
+USE [dbbar]
+
+GO
+
+CREATE TABLE [Role] (
+
+[RoleID] NCHAR(1)		NOT NULL,
+[Title]	 NVARCHAR(30)	NOT NULL,
+CONSTRAINT PK_Role_RoleID PRIMARY KEY (RoleID)
+
+
+)
+
+GO
+
+CREATE TABLE [SignIn] (
+
+[ID]		INT IDENTITY (0, 1),
+[Username]	NVARCHAR(30)			NOT NULL Unique,
+[Password]	NVARCHAR(30)			NOT NULL,
+[IDRole]	NCHAR(1)	CONSTRAINT FK_SignIn_IDRole_Role_RoleID FOREIGN KEY REFERENCES [Role] ([RoleID]),
+CONSTRAINT PK_SignIn_ID PRIMARY KEY (ID)
+)
+
+GO
+
+CREATE TABLE [Bar] (
+
+[ID]			INT IDENTITY (0, 1),
+[BarCounter]	NVARCHAR(30)	NOT NULL,
+[IDDrink]		INT CONSTRAINT FK_Bar_IDDrink_Drink_ID FOREIGN KEY REFERENCES [Drink] ([ID]),
+CONSTRAINT PK_Bar_ID PRIMARY KEY (ID)
+
+)
+
+GO
+INSERT INTO [Bar] ([BarCounter],[IDDrink]) VALUES ('Магазин',0)
+
+
+CREATE TABLE [Drink] (
+
+[ID]			INT IDENTITY (0 ,1),
+[Name]			NVARCHAR(30)			NOT NULL,
+[YearRelease]	DATE					NOT NULL,
+[Alcohol]		NCHAR(3)				NOT NULL,
+[Liter]			NCHAR(3)				NOT NULL,
+[Prace]			NVARCHAR(20)			NOT NULL,
+[YearExp]		DATE					NOT NULL,
+CONSTRAINT PK_Drink_ID PRIMARY KEY (ID)
+
+)
+
+GO
+INSERT INTO [Drink] ([Name],[YearRelease],[Alcohol],[Liter],[Prace], [YearExp]) VALUES ('Вода','2020-12-26','no','1л','30 рублей','2021-01-26')
+SELECT * FROM [Drink]

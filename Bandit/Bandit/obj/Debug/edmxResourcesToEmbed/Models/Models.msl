@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище dbbarModelContainer" CdmEntityContainer="dbbarEntities">
+    <EntitySetMapping Name="Bar">
+      <EntityTypeMapping TypeName="dbbarModel.Bar">
+        <MappingFragment StoreEntitySet="Bar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BarCounter" ColumnName="BarCounter" />
+          <ScalarProperty Name="IDDrink" ColumnName="IDDrink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drink">
+      <EntityTypeMapping TypeName="dbbarModel.Drink">
+        <MappingFragment StoreEntitySet="Drink">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="YearRelease" ColumnName="YearRelease" />
+          <ScalarProperty Name="Alcohol" ColumnName="Alcohol" />
+          <ScalarProperty Name="Liter" ColumnName="Liter" />
+          <ScalarProperty Name="Prace" ColumnName="Prace" />
+          <ScalarProperty Name="YearExp" ColumnName="YearExp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="dbbarModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignIn">
+      <EntityTypeMapping TypeName="dbbarModel.SignIn">
+        <MappingFragment StoreEntitySet="SignIn">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
